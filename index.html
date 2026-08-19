@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype3D | Tisk v Praze</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Шапка -->
+    <header class="header">
+      <h1>PROTOTYPE<span>3D</span></h1>
+      <p class="subtitle">Prusa CORE One+ & MK3 (Praha)</p>
+    </header>
+    
+    <!-- Калькулятор -->
+    <section class="calculator-section">
+      <div class="input-group">
+        <label>
+          <span>Odhadovaná váha (gramy)</span>
+          <span class="highlight" id="wTxt">50 g</span>
+        </label>
+        <!-- ШКАЛА ПОДСКАЗОК ВДОЛЬ ВСЕЙ ДЛИНЫ -->
+  <div class="weight-scale-hints">
+    <span>20g<br><small>Přívěsek</small></span>
+    <span>100g<br><small>Krabička</small></span>
+    <span>250g<br><small>Pouzdro</small></span>
+    <span>500g<br><small>Velký díl</small></span>
+  </div>
+        <input type="range" id="weight" min="10" max="500" value="50" step="10">
+      </div>
+      
+      <div class="input-group">
+        <label>Materiál / Technologie</label>
+        <select id="material">
+          <option value="2.5">PLA (Vizuální modely) — 2.5 Kč/g</option>
+          <option value="3.0" selected>PETG (Funkční díly) — 3.0 Kč/g</option>
+          <option value="4.5">ASA / ABS (Autodíly) — 4.5 Kč/g</option>
+        </select>
+      </div>
+
+<!-- ЭКСПРЕСС-БЛОК -->
+<div class="express-box">
+  <label class="checkbox-label">
+    <input type="checkbox" id="express">
+    <span>🚨 <b>Expres do 24h na CORE One+</b> (+20%)<br><small style="color: #a1a1aa;">Nestíháte deadline?</small></span>
+  </label>
+</div>
+
+      <div class="price-display">
+        <div class="price-label">Odhad ceny vč. přípravy</div>
+        <div class="price-amount" id="totalPrice">270 Kč</div>
+      </div>
+    </section>
+
+    <!-- Форма заказа -->
+    <section class="order-section">
+      <div class="input-group">
+        <label>Jméno nebo Firma</label>
+        <input type="text" id="customerName" placeholder="Např. Petr Novák">
+      </div>
+      
+      <div class="input-group">
+        <label>Váš Email nebo Telefon</label>
+        <input type="text" id="customerContact" placeholder="email@domena.cz nebo +420...">
+      </div>
+      
+      <div class="input-group">
+        <label>Odkaz na 3D model (.STL / .STEP)</label>
+        <input type="text" id="modelLink" placeholder="Odkaz na Printables, GDrive...">
+      </div>
+      
+      <div class="input-group">
+        <label>Popis zadání</label>
+        <textarea id="orderNotes" placeholder="Kusy, barva, termín..." rows="3"></textarea>
+      </div>
+      
+      <!-- ДВЕ КНОПКИ -->
+      <div class="button-group">
+        <button id="sendBtn" class="btn-orange">
+          Odeslat Poptavku 🚀
+        </button>
+        <button id="waBtn" class="btn-whatsapp">
+          Napsat na WhatsApp 💬
+        </button>
+      </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+      📍 Osobní odběr: <b>Praha 2</b><br>
+      📦 Zasíláme přes Zásilkovnu po celé ČR<br>
+      📧 Email: <b>sparepostt@gmail.com</b>
+    </footer>
+
+  </div>
+
+  <!-- СКРЫТЫЙ ПОПАП -->
+  <div id="successPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+      <h2>✅ Hotovo!</h2>
+      <p>Vaše poptávka byla úspěšně odeslána.<br>Brzy se vám ozveme na uvedený kontakt.</p>
+      <button onclick="closePopup()">Zavřít</button>
+    </div>
+  </div>
+
+</body>
+</html>
