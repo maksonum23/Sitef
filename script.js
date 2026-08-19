@@ -1,7 +1,7 @@
 // ==========================================
 // НАСТРОЙКИ БИЗНЕСА
 // ==========================================
-const MY_EMAIL = "sparepostt@gmail.com";  // ⚠️ ТВОЙ EMAIL
+const MY_EMAIL = "3d.tisk.prototype@gmail.com";  // ⚠️ ТВОЙ EMAIL
 const WA_NUMBER = "420722246590";         // ⚠️ ТВОЙ НОМЕР (БЕЗ ПЛЮСА!)
 const BASE_SETUP_FEE = 60;        
 const MIN_ORDER_PRICE = 120;       
